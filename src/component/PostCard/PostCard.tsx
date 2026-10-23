@@ -1,4 +1,4 @@
-import React, {
+import {
   useCallback,
   useContext,
   useEffect,
@@ -62,7 +62,7 @@ export default function PostCard({
   );
   const [isSaving, setIsSaving] = useState(false);
 
-  const { userDetails }: UserContextType = useContext(UserContext);
+  const { userDetails }: UserContextType = useContext(UserContext)!;
 
   const postMenuRef = useRef<HTMLDivElement>(null);
   const commentMenuRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});

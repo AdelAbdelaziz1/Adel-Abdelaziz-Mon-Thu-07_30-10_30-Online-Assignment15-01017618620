@@ -3,17 +3,15 @@ import { useContext, useState } from "react";
 import { createPost } from "../../services/post.service";
 import toast from "react-hot-toast";
 import { Spinner } from "@heroui/react";
-import type { UserContextType } from "../context/UserContext";
-import { TokenContext } from "../context/TokenContext";
+import { UserContext } from "../context/UserContext";
 import axios from "axios";
 
 export default function CreatePost({ getPosts }: { getPosts: () => void }) {
-  const { userDetails }: UserContextType = useContext(TokenContext);
+const { userDetails } = useContext(UserContext)!;
   const [content, setContent] = useState<string>("");
   const [image, setImage] = useState<File | null>(null);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const formData = new FormData();
 
   function handleImage(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];

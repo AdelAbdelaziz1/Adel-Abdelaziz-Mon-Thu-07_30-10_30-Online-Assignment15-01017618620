@@ -7,7 +7,7 @@ export default function AppProtectedRoutes({
 }: {
   children: React.ReactNode;
 }) {
-  const { token } = useContext(TokenContext);
+  const { token } = useContext(TokenContext)!;
 
   return token ? <>{children}</> : <Navigate to="/auth/login" replace />;
 }

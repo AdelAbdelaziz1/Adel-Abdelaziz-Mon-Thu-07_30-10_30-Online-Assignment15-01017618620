@@ -8,7 +8,7 @@ import PostSkeleton from "../../component/PostCard/PostSkeleton";
 import PostCard from "../../component/PostCard/PostCard";
 
 export default function MyPosts() {
-  const { userDetails }: UserContextType = useContext(UserContext);
+  const { userDetails }: UserContextType = useContext(UserContext)!;
   const userId = userDetails?._id;
 
   const [posts, setPosts] = useState<PostCardI[]>([]);

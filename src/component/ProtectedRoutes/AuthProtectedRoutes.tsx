@@ -7,7 +7,7 @@ export default function AuthProtectedRoutes({
 }: {
   children: React.ReactNode;
 }) {
-  const { token } = useContext(TokenContext);
+  const { token } = useContext(TokenContext)!;
 
   return token ? <Navigate to="/feed" replace /> : <>{children}</>;
 }

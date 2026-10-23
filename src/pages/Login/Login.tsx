@@ -14,7 +14,7 @@ import { isAxiosError } from "axios";
 
 export default function Login() {
   const navigate = useNavigate();
-  const { setToken } = useContext(TokenContext);
+  const { setToken } = useContext(TokenContext)!;
   const {
   register,
   handleSubmit,
